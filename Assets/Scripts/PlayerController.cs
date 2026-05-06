@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
-        // Ensure center is correct
         _controller.center = new Vector3(0, 1f, 0);
         _controller.height = 2f;
         _controller.radius = 0.5f;
@@ -39,10 +38,6 @@ public class PlayerController : MonoBehaviour
         {
             _mainCamera = Camera.main.transform;
         }
-        else
-        {
-            Debug.LogWarning("No MainCamera found. Player movement may not be relative to camera.");
-        }
 
         if (_inputActions != null)
         {
@@ -51,14 +46,6 @@ public class PlayerController : MonoBehaviour
             {
                 _moveAction = playerActionMap.FindAction("Move");
             }
-            else
-            {
-                Debug.LogError("Player Action Map not found in InputActions asset.");
-            }
-        }
-        else
-        {
-            Debug.LogError("InputActions asset not assigned to PlayerController.");
         }
     }
 
@@ -82,6 +69,13 @@ public class PlayerController : MonoBehaviour
         Move();
         ApplyGravity();
 
+        // Safety: prevent falling below land
+        if (transform.position.y < -5f)
+        {
+            transform.position = new Vector3(transform.position.x, 2f, transform.position.z);
+            _velocity = Vector3.zero;
+        }
+
         if (_animator != null)
         {
             float speed = _moveInput.magnitude;
@@ -96,7 +90,6 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection;
         if (_mainCamera != null)
         {
-            // Calculate direction relative to camera
             Vector3 forward = _mainCamera.forward;
             Vector3 right = _mainCamera.right;
             forward.y = 0;
@@ -112,11 +105,8 @@ public class PlayerController : MonoBehaviour
 
         if (moveDirection != Vector3.zero)
         {
-            // Rotate character
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
-
-            // Move character
             _controller.Move(moveDirection * _moveSpeed * Time.deltaTime);
         }
     }
@@ -125,10 +115,13 @@ public class PlayerController : MonoBehaviour
     {
         if (_controller.isGrounded && _velocity.y < 0)
         {
-            _velocity.y = -2f;
+            _velocity.y = -1f;
+        }
+        else
+        {
+            _velocity.y += _gravity * Time.deltaTime;
         }
 
-        _velocity.y += _gravity * Time.deltaTime;
         _controller.Move(_velocity * Time.deltaTime);
     }
 }
