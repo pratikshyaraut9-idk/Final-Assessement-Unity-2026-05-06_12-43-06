@@ -1,0 +1,12 @@
+{
+    "asset": "31a978b417ff0fa4497fd1f740380fae",
+    "fileName": "019dfbf2-3e2c-70ec-b9dc-09ee596e2df0.pose.json",
+    "prompt": "a relaxed idle animation for a character standing still, subtle breathing and shifting weight",
+    "negativePrompt": "",
+    "model": "unity-text-to-motion",
+    "modelName": "Text to Motion",
+    "customSeed": 1548873176,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "isTrimmed": false
+}

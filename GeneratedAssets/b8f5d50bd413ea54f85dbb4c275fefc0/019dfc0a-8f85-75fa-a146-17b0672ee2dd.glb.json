@@ -1,0 +1,23 @@
+{
+    "asset": "b8f5d50bd413ea54f85dbb4c275fefc0",
+    "fileName": "019dfc0a-8f85-75fa-a146-17b0672ee2dd.glb",
+    "prompt": "3D humanoid model of a young adult female character in a casual hoodie and jeans, matching the concept.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "77aefec83c612734cbc24298024b1f03",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

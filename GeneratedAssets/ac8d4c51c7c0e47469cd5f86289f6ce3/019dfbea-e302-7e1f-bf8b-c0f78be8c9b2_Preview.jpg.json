@@ -1,0 +1,12 @@
+{
+    "asset": "ac8d4c51c7c0e47469cd5f86289f6ce3",
+    "fileName": "019dfbea-e302-7e1f-bf8b-c0f78be8c9b2_Preview.jpg",
+    "prompt": "brick wall for a city building at night, dark red and brown, slightly worn, seamless tileable texture",
+    "negativePrompt": "",
+    "model": "realistic-textures-3-0",
+    "modelName": "Realistic Textures 3.0",
+    "customSeed": 850340392,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation"
+}

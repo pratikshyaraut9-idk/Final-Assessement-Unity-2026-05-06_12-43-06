@@ -1,0 +1,12 @@
+{
+    "asset": "f9821c9d3ec1dbb4593c859decf975c8",
+    "fileName": "019dfbec-6967-7f58-ba07-8fae6f3f2203_Preview.jpg",
+    "prompt": "asphalt street texture, wet, night time reflection, dark grey, seamless tileable texture",
+    "negativePrompt": "",
+    "model": "realistic-textures-3-0",
+    "modelName": "Realistic Textures 3.0",
+    "customSeed": 1006316179,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation"
+}

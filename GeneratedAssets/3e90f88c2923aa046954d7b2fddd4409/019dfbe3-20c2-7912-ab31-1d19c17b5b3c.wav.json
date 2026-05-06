@@ -1,0 +1,15 @@
+{
+    "asset": "3e90f88c2923aa046954d7b2fddd4409",
+    "fileName": "019dfbe3-20c2-7912-ab31-1d19c17b5b3c.wav",
+    "prompt": "low suspenseful warning drone, danger, risky, dark",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

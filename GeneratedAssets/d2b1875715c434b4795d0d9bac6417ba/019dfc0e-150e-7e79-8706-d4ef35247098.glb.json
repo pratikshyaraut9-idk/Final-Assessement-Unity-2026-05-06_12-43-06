@@ -1,0 +1,23 @@
+{
+    "asset": "d2b1875715c434b4795d0d9bac6417ba",
+    "fileName": "019dfc0e-150e-7e79-8706-d4ef35247098.glb",
+    "prompt": "A 3D model of a cozy suburban house matching the concept.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "10a1446c95f84954fac939e0db679482",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

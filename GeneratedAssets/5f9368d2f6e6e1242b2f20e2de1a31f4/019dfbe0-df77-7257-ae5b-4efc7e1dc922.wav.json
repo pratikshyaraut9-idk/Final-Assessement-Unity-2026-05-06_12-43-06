@@ -1,0 +1,15 @@
+{
+    "asset": "5f9368d2f6e6e1242b2f20e2de1a31f4",
+    "fileName": "019dfbe0-df77-7257-ae5b-4efc7e1dc922.wav",
+    "prompt": "steady deep heartbeat sound, suspenseful, rhythmic thumping",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

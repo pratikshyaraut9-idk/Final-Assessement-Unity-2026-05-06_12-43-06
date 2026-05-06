@@ -1,0 +1,12 @@
+{
+    "asset": "7a0d72b7d4352544a8a04e1b6dc173f3",
+    "fileName": "019dfbf2-4026-7f16-ba55-0b012847657b.pose.json",
+    "prompt": "a realistic casual walking animation for a character heading home at night",
+    "negativePrompt": "",
+    "model": "unity-text-to-motion",
+    "modelName": "Text to Motion",
+    "customSeed": 305231112,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "isTrimmed": false
+}

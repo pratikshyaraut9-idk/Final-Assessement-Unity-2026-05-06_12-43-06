@@ -105,17 +105,3 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
-GeneratedAssets/ 
-GeneratedAssets/ 
-Assets/Plans/ 
-Assets/AI Toolkit/ 
-GeneratedAssets/ 
-Assets/Plans/ 
-Assets/AI\ Toolkit/ 
-Library/ 
-Temp/ 
-Logs/ 
-Obj/ 
-Build/ 
-Builds/ 
-UserSettings/ 

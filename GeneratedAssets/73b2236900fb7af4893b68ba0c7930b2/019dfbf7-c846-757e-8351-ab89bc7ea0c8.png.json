@@ -1,0 +1,28 @@
+{
+    "asset": "73b2236900fb7af4893b68ba0c7930b2",
+    "fileName": "019dfbf7-c846-757e-8351-ab89bc7ea0c8.png",
+    "prompt": "a quiet city street at night, realistic lighting, street lamps casting a warm glow on wet asphalt, safe but moody atmosphere, wide shot, cinematic background for a game menu.",
+    "negativePrompt": "",
+    "model": "gpt-image-1",
+    "modelName": "GPT Image 1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

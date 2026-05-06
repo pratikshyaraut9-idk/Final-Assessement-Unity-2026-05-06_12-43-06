@@ -1,0 +1,15 @@
+{
+    "asset": "246aa4fc4655fd94dbc8731b71e17f5b",
+    "fileName": "019dfbe4-8497-7fbd-bba8-ff018a727818.wav",
+    "prompt": "positive clean chime sound, success, safe, bright",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

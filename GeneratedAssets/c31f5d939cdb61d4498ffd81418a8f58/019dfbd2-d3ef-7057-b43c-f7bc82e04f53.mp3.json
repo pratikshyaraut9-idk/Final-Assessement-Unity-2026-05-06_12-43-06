@@ -1,0 +1,15 @@
+{
+    "asset": "c31f5d939cdb61d4498ffd81418a8f58",
+    "fileName": "019dfbd2-d3ef-7057-b43c-f7bc82e04f53.mp3",
+    "prompt": "calm ambient background music loop for a main menu, soft pads and gentle piano",
+    "negativePrompt": "",
+    "model": "google-lyria-3-clip",
+    "modelName": "Google Lyria 3 Clip",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

@@ -1,0 +1,28 @@
+{
+    "asset": "30b5a4e0026ceb444905f1d067066759",
+    "fileName": "019dfbf1-98e4-7fce-a5d8-26d35ca19158.jpg",
+    "prompt": "Safety shield icon, vibrant blue and silver, glowing effect, casual game style, isolated on white background.",
+    "negativePrompt": "",
+    "model": "game-ui-essentials-2",
+    "modelName": "Game UI Essentials 2.0",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 2048,
+        "height": 2048
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}
