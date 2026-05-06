@@ -1,0 +1,23 @@
+{
+    "asset": "a7f790fd9af6999408552825ef26d37c",
+    "fileName": "019dfc53-a8ce-797f-944f-6da2bc3a740a.glb",
+    "prompt": "A 3D building model of a modern nightclub at night. Dark exterior with neon highlights. Detailed front facade matching the concept art.",
+    "negativePrompt": "",
+    "model": "model3d-tripo3-1",
+    "modelName": "Tripo 3.1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "94f42d8e4a3f7d54d957e2909ecbbb8d",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

@@ -1,0 +1,28 @@
+{
+    "asset": "098178c8a4b0b994b8e713f4c3948179",
+    "fileName": "019dfc56-4af0-7416-b98d-af7f5b2771c0.png",
+    "prompt": "A tall city apartment building at night. Dark brick walls, glowing windows, fire escape on the side. Realistic architectural style, front view, isolated on white background.",
+    "negativePrompt": "",
+    "model": "gpt-image-1",
+    "modelName": "GPT Image 1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] private float _detectionRange = 15f;
-    [SerializeField] private float _stopFollowingDistance = 20f;
+    [SerializeField] private float _detectionRange = 20f;
+    [SerializeField] private float _stopFollowingDistance = 25f;
     
     private Transform _player;
     private NavMeshAgent _agent;
@@ -16,11 +16,17 @@ public class EnemyAI : MonoBehaviour
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
-        _animator = GetComponentInChildren<Animator>();
+        _animator = GetComponent<Animator>();
+        if (_animator == null) _animator = GetComponentInChildren<Animator>();
         
         // Find player by tag
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null) _player = playerObj.transform;
+
+        // Ensure there's a Kinematic Rigidbody for trigger detection
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb == null) rb = gameObject.AddComponent<Rigidbody>();
+        rb.isKinematic = true;
     }
 
     private void Update()
@@ -32,29 +38,24 @@ public class EnemyAI : MonoBehaviour
         if (!_isFollowing && distance < _detectionRange)
         {
             _isFollowing = true;
+            Debug.Log($"{gameObject.name} started following player.");
         }
         else if (_isFollowing && distance > _stopFollowingDistance)
         {
             _isFollowing = false;
-            _agent.ResetPath();
+            if (_agent.isOnNavMesh) _agent.ResetPath();
+            Debug.Log($"{gameObject.name} stopped following player.");
         }
 
-        if (_isFollowing)
+        if (_isFollowing && _agent.isOnNavMesh)
         {
             _agent.SetDestination(_player.position);
         }
 
         if (_animator != null)
         {
-            _animator.SetFloat("Speed", _agent.velocity.magnitude / _agent.speed);
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            EliminatePlayer();
+            float speed = _agent.velocity.magnitude / _agent.speed;
+            _animator.SetFloat("Speed", speed);
         }
     }
 
@@ -68,8 +69,8 @@ public class EnemyAI : MonoBehaviour
 
     private void EliminatePlayer()
     {
-        Debug.Log("Player Eliminated!");
-        // Reset current scene or go to a Game Over screen
+        Debug.Log("Player Touched by Enemy! Restarting level.");
+        // Reset current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

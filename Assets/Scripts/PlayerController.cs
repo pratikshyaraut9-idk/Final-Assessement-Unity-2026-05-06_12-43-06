@@ -22,33 +22,70 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
+        // Ensure center is correct
+        _controller.center = new Vector3(0, 1f, 0);
+        _controller.height = 2f;
+        _controller.radius = 0.5f;
+
         _animator = GetComponent<Animator>();
         if (_animator == null) _animator = GetComponentInChildren<Animator>();
-        _mainCamera = Camera.main.transform;
+        
+        if (_animator != null)
+        {
+            _animator.applyRootMotion = false;
+        }
 
-        var playerActionMap = _inputActions.FindActionMap("Player");
-        _moveAction = playerActionMap.FindAction("Move");
+        if (Camera.main != null)
+        {
+            _mainCamera = Camera.main.transform;
+        }
+        else
+        {
+            Debug.LogWarning("No MainCamera found. Player movement may not be relative to camera.");
+        }
+
+        if (_inputActions != null)
+        {
+            var playerActionMap = _inputActions.FindActionMap("Player");
+            if (playerActionMap != null)
+            {
+                _moveAction = playerActionMap.FindAction("Move");
+            }
+            else
+            {
+                Debug.LogError("Player Action Map not found in InputActions asset.");
+            }
+        }
+        else
+        {
+            Debug.LogError("InputActions asset not assigned to PlayerController.");
+        }
     }
 
     private void OnEnable()
     {
-        _moveAction.Enable();
+        if (_moveAction != null) _moveAction.Enable();
     }
 
     private void OnDisable()
     {
-        _moveAction.Disable();
+        if (_moveAction != null) _moveAction.Disable();
     }
 
     private void Update()
     {
-        _moveInput = _moveAction.ReadValue<Vector2>();
+        if (_moveAction != null)
+        {
+            _moveInput = _moveAction.ReadValue<Vector2>();
+        }
+        
         Move();
         ApplyGravity();
 
         if (_animator != null)
         {
-            _animator.SetFloat("Speed", _moveInput.magnitude);
+            float speed = _moveInput.magnitude;
+            _animator.SetFloat("Speed", speed);
         }
     }
 
@@ -56,22 +93,32 @@ public class PlayerController : MonoBehaviour
     {
         if (_moveInput.magnitude < 0.1f) return;
 
-        // Calculate direction relative to camera
-        Vector3 forward = _mainCamera.forward;
-        Vector3 right = _mainCamera.right;
-        forward.y = 0;
-        right.y = 0;
-        forward.Normalize();
-        right.Normalize();
+        Vector3 moveDirection;
+        if (_mainCamera != null)
+        {
+            // Calculate direction relative to camera
+            Vector3 forward = _mainCamera.forward;
+            Vector3 right = _mainCamera.right;
+            forward.y = 0;
+            right.y = 0;
+            forward.Normalize();
+            right.Normalize();
+            moveDirection = forward * _moveInput.y + right * _moveInput.x;
+        }
+        else
+        {
+            moveDirection = new Vector3(_moveInput.x, 0, _moveInput.y);
+        }
 
-        Vector3 moveDirection = forward * _moveInput.y + right * _moveInput.x;
+        if (moveDirection != Vector3.zero)
+        {
+            // Rotate character
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
 
-        // Rotate character
-        Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
-
-        // Move character
-        _controller.Move(moveDirection * _moveSpeed * Time.deltaTime);
+            // Move character
+            _controller.Move(moveDirection * _moveSpeed * Time.deltaTime);
+        }
     }
 
     private void ApplyGravity()

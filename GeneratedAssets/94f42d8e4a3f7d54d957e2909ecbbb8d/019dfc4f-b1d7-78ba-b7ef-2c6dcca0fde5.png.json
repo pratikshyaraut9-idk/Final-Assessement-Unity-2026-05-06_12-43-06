@@ -1,0 +1,28 @@
+{
+    "asset": "94f42d8e4a3f7d54d957e2909ecbbb8d",
+    "fileName": "019dfc4f-b1d7-78ba-b7ef-2c6dcca0fde5.png",
+    "prompt": "A cinematic facade of a modern urban nightclub at night. Neon signs with \"NIGHTCLUB\" in glowing pink and blue. Dark metallic textures, large glass doors, velvet ropes at the entrance. Realistic style, front view, isolated on white background.",
+    "negativePrompt": "",
+    "model": "gpt-image-1",
+    "modelName": "GPT Image 1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}
