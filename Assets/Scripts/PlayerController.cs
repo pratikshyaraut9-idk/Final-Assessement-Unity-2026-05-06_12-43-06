@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
-        _animator = GetComponentInChildren<Animator>();
+        _animator = GetComponent<Animator>();
+        if (_animator == null) _animator = GetComponentInChildren<Animator>();
         _mainCamera = Camera.main.transform;
 
         var playerActionMap = _inputActions.FindActionMap("Player");
