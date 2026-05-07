@@ -84,6 +84,10 @@ public class UIManager : MonoBehaviour
         _overlay.RemoveFromClassList("hidden");
         _decisionPanel.RemoveFromClassList("hidden");
         _feedbackPanel.AddToClassList("hidden");
+
+        // Unlock cursor for UI interaction
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        UnityEngine.Cursor.visible = true;
     }
 
     private void HandleChoice(bool isA)
@@ -118,6 +122,11 @@ public class UIManager : MonoBehaviour
     private void Continue()
     {
         _overlay.AddToClassList("hidden");
+        
+        // Re-lock cursor before scene transition/game resume
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        UnityEngine.Cursor.visible = false;
+
         ScenarioController.Instance.CompleteScenario(_lastChoiceWasSafe, _currentData.NextSceneName);
     }
 }
